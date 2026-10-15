@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUKE PC's</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080b12;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0d111b;
+            border-bottom: 1px solid #202735;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00e5ff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at center, #123047 0%, #080b12 55%);
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            color: #00e5ff;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #b8c0cc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* About */
+        .about {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+            color: #00e5ff;
+        }
+
+        .about > p {
+            max-width: 750px;
+            margin: auto;
+            color: #b8c0cc;
+            line-height: 1.7;
+        }
+
+        /* Cards */
+        .cards {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #111722;
+            padding: 30px 20px;
+            border-radius: 15px;
+            border: 1px solid #222c3b;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
+        }
+
+        .card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #9da7b5;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0d111b;
+            color: #788394;
+            border-top: 1px solid #202735;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">NUKE PC's</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pc-worth.html">PC Worth</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>NUKE PC's</h1>
+        <h2>Explore. Identify. Value.</h2>
+
+        <p>
+            Welcome to NUKE PC's — a platform designed for PC enthusiasts
+            to explore different types of computers, understand their
+            components, and discover what their PC could be worth.
+        </p>
+    </section>
+
+    <section class="about">
+
+        <h2>About NUKE PC's</h2>
+
+        <p>
+            NUKE PC's helps you understand the world of computers in a
+            simple way. Explore different PC categories and CPU platforms,
+            then use our PC Worth section to estimate the resale value
+            of your computer.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>Gaming PCs</h3>
+                <p>
+                    Powerful computers designed for gaming,
+                    high performance and graphics-intensive tasks.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💼</div>
+                <h3>Office PCs</h3>
+                <p>
+                    Reliable computers suitable for school,
+                    office work, browsing and everyday tasks.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Workstations</h3>
+                <p>
+                    High-performance systems built for professional
+                    applications and demanding workloads.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🖥️</div>
+                <h3>Custom PCs</h3>
+                <p>
+                    Computers assembled with selected components
+                    according to the user's requirements.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔵</div>
+                <h3>Intel CPUs</h3>
+                <p>
+                    Intel processors are widely used in desktops,
+                    laptops and high-performance computers.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔴</div>
+                <h3>AMD CPUs</h3>
+                <p>
+                    AMD processors provide a range of options
+                    for gaming, productivity and performance.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 NUKE PC's — Explore the world of PCs
+    </footer>
+
+</body>
+</html>

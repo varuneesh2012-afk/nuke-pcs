@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | NUKE PC's</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080b12;
+    color: white;
+}
+
+/* NAVIGATION */
+
+nav {
+    padding: 20px 7%;
+    background: #0d111b;
+    border-bottom: 1px solid #202735;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 65px 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    font-size: 45px;
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+.heading p {
+    color: #9da7b5;
+    line-height: 1.6;
+}
+
+/* CONTACT FORM */
+
+.contact-box {
+    background: #111722;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #222c3b;
+}
+
+.contact-box h2 {
+    color: #00e5ff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd2dc;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 22px;
+
+    background: #080b12;
+    color: white;
+
+    border: 1px solid #303a4a;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #00e5ff;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00e5ff;
+    color: #061018;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,229,255,0.2);
+}
+
+/* SUCCESS MESSAGE */
+
+#success {
+    display: none;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    text-align: center;
+
+    background: #0d2026;
+    border: 1px solid #00e5ff;
+    border-radius: 8px;
+
+    color: #00e5ff;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+}
+
+.info-card {
+    background: #111722;
+    padding: 25px;
+
+    border-radius: 15px;
+    border: 1px solid #222c3b;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.info-card h3 {
+    color: #00e5ff;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #9da7b5;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+
+    background: #0d111b;
+    color: #788394;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .heading h1 {
+        font-size: 35px;
+    }
+
+    .contact-box {
+        padding: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        NUKE PC's
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="pc-worth.html">
+                PC Worth
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact Us
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+
+    <div class="heading">
+
+        <h1>
+            Contact Us
+        </h1>
+
+        <p>
+            Have a question, suggestion or feedback?
+            Get in touch with the NUKE PC's team.
+        </p>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <div class="contact-box">
+
+        <h2>
+            Send Us a Message
+        </h2>
+
+
+        <form onsubmit="sendMessage(event)">
+
+
+            <label for="name">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label for="subject">
+                Subject
+            </label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="What is your message about?"
+                required
+            >
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                SEND MESSAGE
+            </button>
+
+
+        </form>
+
+
+        <div id="success">
+            ✓ Thank you! Your message has been received.
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="contact-info">
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                📧
+            </div>
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                nukepcs@example.com
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                NUKE PC's
+            </h3>
+
+            <p>
+                PC Information & Value
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h3>
+                Online Support
+            </h3>
+
+            <p>
+                We're here to help
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 NUKE PC's — All Rights Reserved
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    document.getElementById("success").style.display =
+        "block";
+
+    document.querySelector("form").reset();
+
+}
+
+</script>
+
+
+</body>
+
+</html>

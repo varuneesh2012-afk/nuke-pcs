@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PC Worth | NUKE PC's</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080b12;
+    color: white;
+}
+
+/* NAVIGATION */
+
+nav {
+    padding: 20px 7%;
+    background: #0d111b;
+    border-bottom: 1px solid #202735;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    font-size: 45px;
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #9da7b5;
+}
+
+/* UPLOAD */
+
+.upload-box {
+    display: block;
+    background: #111722;
+    border: 2px dashed #00e5ff;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background: #141c28;
+}
+
+.upload-icon {
+    font-size: 55px;
+}
+
+.upload-box h2 {
+    margin: 10px 0;
+}
+
+.upload-box p {
+    color: #8993a2;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-button {
+    display: inline-block;
+    background: #00e5ff;
+    color: #061018;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#preview {
+    display: none;
+    max-width: 100%;
+    max-height: 300px;
+    margin: 25px auto 0;
+    border-radius: 12px;
+}
+
+/* FORM */
+
+.form-box {
+    margin-top: 30px;
+    background: #111722;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #222c3b;
+}
+
+.form-box h2 {
+    color: #00e5ff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+label.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd2dc;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+
+    background: #080b12;
+    color: white;
+
+    border: 1px solid #303a4a;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #00e5ff;
+}
+
+/* BUTTON */
+
+.calculate {
+    width: 100%;
+    padding: 16px;
+
+    background: #00e5ff;
+    color: #061018;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,229,255,0.2);
+}
+
+/* RESULT */
+
+.result {
+    display: none;
+
+    margin-top: 35px;
+    padding: 30px;
+
+    background: #101722;
+
+    border: 1px solid #00e5ff;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.complete {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.complete-icon {
+    font-size: 45px;
+}
+
+.complete h2 {
+    color: #00e5ff;
+    margin-top: 8px;
+}
+
+.complete p {
+    color: #8f9aaa;
+    margin-top: 5px;
+}
+
+/* RESULT CONTENT */
+
+.analysis {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 25px;
+    align-items: center;
+}
+
+.result-image {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+
+    border-radius: 15px;
+    background: #080b12;
+    border: 1px solid #273141;
+}
+
+.specifications {
+    background: #0b1018;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.specifications h3 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #242c38;
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-name {
+    color: #8993a2;
+}
+
+.spec-value {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* PRICE */
+
+.value-box {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #0b1820;
+
+    border: 1px solid #00e5ff;
+    border-radius: 15px;
+}
+
+.value-title {
+    color: #9da7b5;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 42px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+.value-note {
+    color: #7f8998;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* RESET BUTTON */
+
+.reset {
+    margin-top: 20px;
+
+    width: 100%;
+    padding: 14px;
+
+    background: transparent;
+    color: #00e5ff;
+
+    border: 1px solid #00e5ff;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.reset:hover {
+    background: #00e5ff;
+    color: #061018;
+}
+
+/* INFORMATION */
+
+.info {
+    margin-top: 30px;
+    padding: 25px;
+
+    background: #111722;
+
+    border-radius: 15px;
+    border: 1px solid #222c3b;
+}
+
+.info h2 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+.info p {
+    color: #9da7b5;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+
+    background: #0d111b;
+    color: #788394;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .heading h1 {
+        font-size: 34px;
+    }
+
+    .form-box {
+        padding: 22px;
+    }
+
+    .analysis {
+        grid-template-columns: 1fr;
+    }
+
+    .price {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        NUKE PC's
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="pc-worth.html">PC Worth</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact Us</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="heading">
+
+        <h1>Find Your PC's Worth</h1>
+
+        <p>
+            Upload your PC image and enter its specifications
+            to calculate an estimated resale value.
+        </p>
+
+    </div>
+
+
+    <!-- IMAGE UPLOAD -->
+
+    <label class="upload-box" for="pcImage">
+
+        <div class="upload-icon">
+            📷
+        </div>
+
+        <h2>
+            Upload Your PC
+        </h2>
+
+        <p>
+            JPG, JPEG, PNG or WEBP
+        </p>
+
+        <span class="upload-button">
+            Choose PC Image
+        </span>
+
+        <input
+            type="file"
+            id="pcImage"
+            accept="image/*"
+            onchange="showImage(event)"
+        >
+
+        <img id="preview" alt="PC Preview">
+
+    </label>
+
+
+    <!-- SPECIFICATION FORM -->
+
+    <div class="form-box">
+
+        <h2>
+            PC Specifications
+        </h2>
+
+
+        <label class="form-label">
+            PC / Model Name
+        </label>
+
+        <input
+            type="text"
+            id="model"
+            placeholder="Example: HP Pavilion Gaming"
+        >
+
+
+        <label class="form-label">
+            Brand
+        </label>
+
+        <select id="brand">
+
+            <option value="0">
+                Select Brand
+            </option>
+
+            <option value="1">
+                HP
+            </option>
+
+            <option value="1">
+                Dell
+            </option>
+
+            <option value="1">
+                Lenovo
+            </option>
+
+            <option value="1">
+                ASUS
+            </option>
+
+            <option value="1">
+                Acer
+            </option>
+
+            <option value="1">
+                MSI
+            </option>
+
+            <option value="1">
+                Custom Build
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            CPU
+        </label>
+
+        <select id="cpu">
+
+            <option value="0">
+                Select CPU
+            </option>
+
+            <option value="5000">
+                Intel Core i3
+            </option>
+
+            <option value="8000">
+                Intel Core i5
+            </option>
+
+            <option value="12000">
+                Intel Core i7
+            </option>
+
+            <option value="18000">
+                Intel Core i9
+            </option>
+
+            <option value="5000">
+                AMD Ryzen 3
+            </option>
+
+            <option value="8000">
+                AMD Ryzen 5
+            </option>
+
+            <option value="12000">
+                AMD Ryzen 7
+            </option>
+
+            <option value="18000">
+                AMD Ryzen 9
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            RAM
+        </label>
+
+        <select id="ram">
+
+            <option value="0">
+                Select RAM
+            </option>
+
+            <option value="2000">
+                4 GB
+            </option>
+
+            <option value="4000">
+                8 GB
+            </option>
+
+            <option value="7000">
+                16 GB
+            </option>
+
+            <option value="11000">
+                32 GB
+            </option>
+
+            <option value="16000">
+                64 GB
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            Storage
+        </label>
+
+        <select id="storage">
+
+            <option value="0">
+                Select Storage
+            </option>
+
+            <option value="2000">
+                256 GB SSD
+            </option>
+
+            <option value="3500">
+                512 GB SSD
+            </option>
+
+            <option value="5500">
+                1 TB SSD
+            </option>
+
+            <option value="4000">
+                1 TB HDD
+            </option>
+
+            <option value="7000">
+                2 TB HDD
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            GPU
+        </label>
+
+        <select id="gpu">
+
+            <option value="0">
+                Integrated Graphics
+            </option>
+
+            <option value="5000">
+                GTX 1650
+            </option>
+
+            <option value="9000">
+                GTX 1660
+            </option>
+
+            <option value="12000">
+                RTX 3050
+            </option>
+
+            <option value="18000">
+                RTX 3060
+            </option>
+
+            <option value="25000">
+                RTX 4060
+            </option>
+
+            <option value="35000">
+                RTX 4070
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            PC Condition
+        </label>
+
+        <select id="condition">
+
+            <option value="1">
+                Excellent
+            </option>
+
+            <option value="0.90">
+                Good
+            </option>
+
+            <option value="0.75">
+                Average
+            </option>
+
+            <option value="0.60">
+                Poor
+            </option>
+
+        </select>
+
+
+        <label class="form-label">
+            Age of PC
+        </label>
+
+        <select id="age">
+
+            <option value="1">
+                Less than 1 year
+            </option>
+
+            <option value="0.90">
+                1–2 years
+            </option>
+
+            <option value="0.80">
+                2–3 years
+            </option>
+
+            <option value="0.70">
+                3–5 years
+            </option>
+
+            <option value="0.55">
+                More than 5 years
+            </option>
+
+        </select>
+
+
+        <button
+            class="calculate"
+            onclick="calculateValue()"
+        >
+            💰 Calculate PC Worth
+        </button>
+
+    </div>
+
+
+    <!-- ANALYSIS RESULT -->
+
+    <div class="result" id="result">
+
+        <div class="complete">
+
+            <div class="complete-icon">
+                ✓
+            </div>
+
+            <h2>
+                PC Analysis Complete
+            </h2>
+
+            <p>
+                Your estimated PC resale value is ready.
+            </p>
+
+        </div>
+
+
+        <div class="analysis">
+
+            <div>
+
+                <img
+                    id="resultImage"
+                    class="result-image"
+                    alt="Uploaded PC"
+                >
+
+            </div>
+
+
+            <div class="specifications">
+
+                <h3>
+                    PC Details
+                </h3>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        Model
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultModel">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        Brand
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultBrand">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        CPU
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultCpu">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        GPU
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultGpu">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        RAM
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultRam">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        Storage
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultStorage">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        Condition
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultCondition">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="spec-row">
+
+                    <span class="spec-name">
+                        Age
+                    </span>
+
+                    <span
+                        class="spec-value"
+                        id="resultAge">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VALUE -->
+
+        <div class="value-box">
+
+            <div class="value-title">
+                ESTIMATED RESALE VALUE
+            </div>
+
+            <div
+                class="price"
+                id="price">
+                ₹0
+            </div>
+
+            <p class="value-note">
+                Estimated based on the specifications,
+                age and condition provided.
+            </p>
+
+        </div>
+
+
+        <button
+            class="reset"
+            onclick="resetPage()">
+
+            🔄 Check Another PC
+
+        </button>
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info">
+
+        <h2>
+            How Does NUKE PC's Work?
+        </h2>
+
+        <p>
+            Upload a picture of your computer, provide its
+            specifications and select its age and condition.
+            NUKE PC's then calculates an estimated resale
+            value to help you understand what your PC could
+            potentially be worth.
+        </p>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 NUKE PC's — PC Information & Value
+
+</footer>
+
+
+<script>
+
+/* IMAGE PREVIEW */
+
+function showImage(event) {
+
+    const file = event.target.files[0];
+
+    if (file) {
+
+        const preview =
+            document.getElementById("preview");
+
+        preview.src =
+            URL.createObjectURL(file);
+
+        preview.style.display = "block";
+    }
+}
+
+
+/* CALCULATE VALUE */
+
+function calculateValue() {
+
+    const model =
+        document.getElementById("model").value;
+
+    const brandSelect =
+        document.getElementById("brand");
+
+    const brand =
+        brandSelect.options[
+            brandSelect.selectedIndex
+        ].text;
+
+    const cpuSelect =
+        document.getElementById("cpu");
+
+    const cpu =
+        cpuSelect.options[
+            cpuSelect.selectedIndex
+        ].text;
+
+    const ramSelect =
+        document.getElementById("ram");
+
+    const ram =
+        ramSelect.options[
+            ramSelect.selectedIndex
+        ].text;
+
+    const storageSelect =
+        document.getElementById("storage");
+
+    const storage =
+        storageSelect.options[
+            storageSelect.selectedIndex
+        ].text;
+
+    const gpuSelect =
+        document.getElementById("gpu");
+
+    const gpu =
+        gpuSelect.options[
+            gpuSelect.selectedIndex
+        ].text;
+
+    const conditionSelect =
+        document.getElementById("condition");
+
+    const condition =
+        conditionSelect.options[
+            conditionSelect.selectedIndex
+        ].text;
+
+    const conditionValue =
+        Number(conditionSelect.value);
+
+    const ageSelect =
+        document.getElementById("age");
+
+    const age =
+        ageSelect.options[
+            ageSelect.selectedIndex
+        ].text;
+
+    const ageValue =
+        Number(ageSelect.value);
+
+    const cpuValue =
+        Number(cpuSelect.value);
+
+    const ramValue =
+        Number(ramSelect.value);
+
+    const storageValue =
+        Number(storageSelect.value);
+
+    const gpuValue =
+        Number(gpuSelect.value);
+
+
+    /* CHECK CPU */
+
+    if (cpuValue === 0) {
+
+        alert("Please select your CPU.");
+
+        return;
+    }
+
+
+    /* CALCULATE */
+
+    const baseValue =
+        5000 +
+        cpuValue +
+        ramValue +
+        storageValue +
+        gpuValue;
+
+
+    const estimatedValue =
+        Math.round(
+            baseValue *
+            conditionValue *
+            ageValue
+        );
+
+
+    const minimum =
+        Math.round(
+            estimatedValue * 0.90
+        );
+
+
+    const maximum =
+        Math.round(
+            estimatedValue * 1.10
+        );
+
+
+    /* DISPLAY DETAILS */
+
+    document.getElementById("resultModel").textContent =
+        model || "Not specified";
+
+    document.getElementById("resultBrand").textContent =
+        brand;
+
+    document.getElementById("resultCpu").textContent =
+        cpu;
+
+    document.getElementById("resultGpu").textContent =
+        gpu;
+
+    document.getElementById("resultRam").textContent =
+        ram;
+
+    document.getElementById("resultStorage").textContent =
+        storage;
+
+    document.getElementById("resultCondition").textContent =
+        condition;
+
+    document.getElementById("resultAge").textContent =
+        age;
+
+
+    /* DISPLAY PRICE */
+
+    document.getElementById("price").textContent =
+        "₹" +
+        minimum.toLocaleString("en-IN") +
+        " – ₹" +
+        maximum.toLocaleString("en-IN");
+
+
+    /* COPY IMAGE TO RESULT */
+
+    const preview =
+        document.getElementById("preview");
+
+    const resultImage =
+        document.getElementById("resultImage");
+
+    if (preview.src &&
+        preview.style.display !== "none") {
+
+        resultImage.src = preview.src;
+
+    }
+
+
+    /* SHOW RESULT */
+
+    document.getElementById("result").style.display =
+        "block";
+
+
+    document.getElementById("result").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* RESET */
+
+function resetPage() {
+
+    document.getElementById("result").style.display =
+        "none";
+
+    document.getElementById("preview").style.display =
+        "none";
+
+    document.getElementById("pcImage").value = "";
+
+    document.getElementById("model").value = "";
+
+    document.getElementById("brand").selectedIndex = 0;
+
+    document.getElementById("cpu").selectedIndex = 0;
+
+    document.getElementById("ram").selectedIndex = 0;
+
+    document.getElementById("storage").selectedIndex = 0;
+
+    document.getElementById("gpu").selectedIndex = 0;
+
+    document.getElementById("condition").selectedIndex = 0;
+
+    document.getElementById("age").selectedIndex = 0;
+
+}
+
+</script>
+
+</body>
+</html>
